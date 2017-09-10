@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C484527B1F61A22B0067D0B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484527A1F61A22B0067D0B0 /* AppDelegate.swift */; };
-		C484527D1F61A22B0067D0B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484527C1F61A22B0067D0B0 /* ViewController.swift */; };
 		C48452801F61A22B0067D0B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C484527E1F61A22B0067D0B0 /* Main.storyboard */; };
 		C48452821F61A22B0067D0B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48452811F61A22B0067D0B0 /* Assets.xcassets */; };
 		C48452851F61A22B0067D0B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48452831F61A22B0067D0B0 /* LaunchScreen.storyboard */; };
 		C48452901F61A22B0067D0B0 /* soyUnDNI_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484528F1F61A22B0067D0B0 /* soyUnDNI_Tests.swift */; };
 		C484529B1F61A22B0067D0B0 /* soyUnDNI_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484529A1F61A22B0067D0B0 /* soyUnDNI_UITests.swift */; };
+		C48452A91F61A2EB0067D0B0 /* Dni.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48452A81F61A2EB0067D0B0 /* Dni.swift */; };
+		C48452AB1F61A2FB0067D0B0 /* dniTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48452AA1F61A2FB0067D0B0 /* dniTableViewCell.swift */; };
+		C48452AD1F61A31C0067D0B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48452AC1F61A31C0067D0B0 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,6 @@
 /* Begin PBXFileReference section */
 		C48452771F61A22B0067D0B0 /* soyUnDNI?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "soyUnDNI?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484527A1F61A22B0067D0B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C484527C1F61A22B0067D0B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C484527F1F61A22B0067D0B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C48452811F61A22B0067D0B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C48452841F61A22B0067D0B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		C48452961F61A22B0067D0B0 /* soyUnDNI?UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "soyUnDNI?UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484529A1F61A22B0067D0B0 /* soyUnDNI_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soyUnDNI_UITests.swift; sourceTree = "<group>"; };
 		C484529C1F61A22B0067D0B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C48452A81F61A2EB0067D0B0 /* Dni.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dni.swift; sourceTree = "<group>"; };
+		C48452AA1F61A2FB0067D0B0 /* dniTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dniTableViewCell.swift; sourceTree = "<group>"; };
+		C48452AC1F61A31C0067D0B0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				C484527A1F61A22B0067D0B0 /* AppDelegate.swift */,
-				C484527C1F61A22B0067D0B0 /* ViewController.swift */,
+				C48452A81F61A2EB0067D0B0 /* Dni.swift */,
+				C48452AA1F61A2FB0067D0B0 /* dniTableViewCell.swift */,
+				C48452AC1F61A31C0067D0B0 /* ViewController.swift */,
 				C484527E1F61A22B0067D0B0 /* Main.storyboard */,
 				C48452811F61A22B0067D0B0 /* Assets.xcassets */,
 				C48452831F61A22B0067D0B0 /* LaunchScreen.storyboard */,
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C484527D1F61A22B0067D0B0 /* ViewController.swift in Sources */,
 				C484527B1F61A22B0067D0B0 /* AppDelegate.swift in Sources */,
+				C48452A91F61A2EB0067D0B0 /* Dni.swift in Sources */,
+				C48452AD1F61A31C0067D0B0 /* ViewController.swift in Sources */,
+				C48452AB1F61A2FB0067D0B0 /* dniTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="soyUnDNI_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,134 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="152" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Kt-1M-LtW">
+                                <rect key="frame" x="60" y="70" width="200" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.43457171467068861" green="0.72041051963186431" blue="0.85102982954545459" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dP4-fc-II9"/>
+                                    <constraint firstAttribute="width" constant="200" id="l0X-1Z-o6l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="nDNITextFieldChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="EQt-y6-LAO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QhT-uK-0qh"/>
+                                </connections>
+                            </textField>
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="34" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1qh-WS-Vam">
+                                <rect key="frame" x="-4" y="108" width="328" height="440"/>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.57647058823529407" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dniTableViewCell" rowHeight="34" id="pBY-FJ-FeA" customClass="dniTableViewCell" customModule="soyUnDNI_" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="328" height="34"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="pBY-FJ-FeA" id="kc4-Xa-fAc">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="34"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-GQ-IcC">
+                                                    <rect key="frame" x="173" y="6" width="139" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="139" id="1Q8-mp-zC5"/>
+                                                        <constraint firstAttribute="height" constant="21" id="7dy-BA-cS8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="9"/>
+                                                    <color key="highlightedColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="46553363 X" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugL-hQ-Oih">
+                                                    <rect key="frame" x="8" y="6" width="157" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="157" id="Lea-Te-1ke"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.7803921568627451" green="0.92941176470588238" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="RGg-GQ-IcC" firstAttribute="trailing" secondItem="kc4-Xa-fAc" secondAttribute="trailingMargin" id="KgB-ER-XT1"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="ugL-hQ-Oih" secondAttribute="leading" id="ONR-Ab-NkF"/>
+                                                <constraint firstItem="ugL-hQ-Oih" firstAttribute="top" secondItem="kc4-Xa-fAc" secondAttribute="topMargin" constant="-2" id="Zyi-Bv-3P0"/>
+                                                <constraint firstItem="RGg-GQ-IcC" firstAttribute="leading" secondItem="ugL-hQ-Oih" secondAttribute="trailing" constant="8" id="pUu-c8-ZrM"/>
+                                                <constraint firstItem="RGg-GQ-IcC" firstAttribute="top" secondItem="kc4-Xa-fAc" secondAttribute="topMargin" constant="-2" id="uib-Hs-ZXf"/>
+                                                <constraint firstItem="RGg-GQ-IcC" firstAttribute="bottom" secondItem="ugL-hQ-Oih" secondAttribute="bottom" id="zbN-a0-81K"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fechaCreacionLabel" destination="RGg-GQ-IcC" id="w3g-t4-7Fb"/>
+                                            <outlet property="nifLabel" destination="ugL-hQ-Oih" id="Efr-D2-bWR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FdE-vV-mSv"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GcO-ht-IOe"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="28" translatesAutoresizingMaskIntoConstraints="NO" id="FLU-Wg-L0G">
+                                <rect key="frame" x="268" y="70" width="10" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="da8-O3-AVs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="28"/>
+                                <color key="textColor" red="0.7803921568627451" green="0.92941176470588238" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mg9-cA-n3f">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="13"/>
+                                    <color key="textColor" red="0.086274509799999996" green="0.57647058819999997" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="soy un dni?" id="uTn-fM-wdd"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27058823529411763" green="0.70980392156862748" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="1qh-WS-Vam" secondAttribute="trailing" constant="-20" id="0Ai-Ly-chc"/>
+                            <constraint firstItem="mg9-cA-n3f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0QT-XM-Fem"/>
+                            <constraint firstItem="1qh-WS-Vam" firstAttribute="top" secondItem="6Kt-1M-LtW" secondAttribute="bottom" constant="36" id="7bp-kK-LRe"/>
+                            <constraint firstItem="1qh-WS-Vam" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="8zK-j7-EZ2"/>
+                            <constraint firstItem="FLU-Wg-L0G" firstAttribute="top" secondItem="mg9-cA-n3f" secondAttribute="bottom" constant="6" id="FOB-7K-zwY"/>
+                            <constraint firstItem="6Kt-1M-LtW" firstAttribute="top" secondItem="mg9-cA-n3f" secondAttribute="bottom" constant="6" id="IaU-Ir-Cde"/>
+                            <constraint firstItem="FLU-Wg-L0G" firstAttribute="leading" secondItem="6Kt-1M-LtW" secondAttribute="trailing" constant="8" id="KOZ-e6-HWd"/>
+                            <constraint firstItem="6Kt-1M-LtW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jzR-05-bjB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1qh-WS-Vam" secondAttribute="bottom" constant="20" id="kLJ-KB-0oa"/>
+                            <constraint firstItem="mg9-cA-n3f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nSg-JD-wgH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mg9-cA-n3f" secondAttribute="trailing" constant="-20" id="zka-cq-dWU"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ywE-h7-FmM" appends="YES" id="pwz-rT-Fdt"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="dniHistorialTableView" destination="1qh-WS-Vam" id="xDN-az-9H6"/>
+                        <outlet property="letraDNILabel" destination="FLU-Wg-L0G" id="345-56-VYU"/>
+                        <outlet property="nDNITextField" destination="6Kt-1M-LtW" id="rZF-7b-81L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ywE-h7-FmM">
+                    <connections>
+                        <action selector="viewTappedWithSender:" destination="BYZ-38-t0r" id="NWe-mf-X4z"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="168" y="316"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
