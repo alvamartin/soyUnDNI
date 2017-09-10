@@ -20,12 +20,8 @@ class Dni: NSObject, NSCoding {
             let numDNIint = Int (numeroDNI)
             let indice = numDNIint! % 23
             
-           // NSLog(indice.description)
-           // NSLog("el número que me llega es " + numeroDNI)
-            
             if  (indice > 0) {
                 let tablaLetras = "TRWAGMYFPDXBNJZSQVHLCKE"
-                //let indiceLetra = tablaLetras.index(indice)
                 let indiceLetra = tablaLetras.characters.index(tablaLetras.characters.startIndex, offsetBy: indice)
                 l = tablaLetras.characters[indiceLetra]
             }
@@ -70,23 +66,13 @@ class Dni: NSObject, NSCoding {
         aCoder.encode(favorite, forKey: PropertyKey.favoriteKey)
         aCoder.encode(notas, forKey: PropertyKey.notasKey)
     }
-
-//    func encodeWithCoder(aCoder: NSCoder) {
-//        aCoder.encode(numeroDNI, forKey: PropertyKey.numeroKey)
-//        aCoder.encode(created, forKey: PropertyKey.createdKey)
-//        aCoder.encode(favorite, forKey: PropertyKey.favoriteKey)
-//        aCoder.encode(notas, forKey: PropertyKey.notasKey)
-//    }
-    
     
     required convenience init?(coder aDecoder: NSCoder) {
         let numeroDNI = aDecoder.decodeObject(forKey: PropertyKey.numeroKey) as! String
         let created   = aDecoder.decodeObject(forKey: PropertyKey.createdKey) as! NSDate
         let favorite = aDecoder.decodeBool(forKey: PropertyKey.favoriteKey)
         let notas = aDecoder.decodeObject(forKey: PropertyKey.notasKey) as! String
-    
-        
-        
+
         self.init (numeroDNI: numeroDNI, created:created, favorite:favorite, notas:notas)
     }
 }

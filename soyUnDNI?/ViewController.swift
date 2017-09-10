@@ -64,8 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
                 return a.created.timeIntervalSinceReferenceDate > b.created.timeIntervalSinceReferenceDate
             }
             dniHistorialTableView.reloadData()
-            nDNITextField.text = ""
-            letraDNILabel.text = ""
+            refreshUI()
             nDNITextField.becomeFirstResponder()
             saveDnis()
         }
@@ -77,28 +76,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        /*
-        var result = true
-        let prospectiveText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         
-        if textField == nDNITextField {
-            if string.characters.count > 0 {
-                let disallowedCharacterSet = NSCharacterSet(charactersInString: "0123456789").inverted
-                let replacementStringIsLegal = string.rangeOfCharacter(from: disallowedCharacterSet) == nil
-                
-                let resultingStringLengthIsLegal = prospectiveText.characters.count <= 8
-                
-                let scanner = Scanner(string: prospectiveText)
-                let resultingTextIsNumeric = scanner.scanDecimal(nil) && scanner.isAtEnd
-                
-                result = replacementStringIsLegal &&
-                    resultingStringLengthIsLegal &&
-                resultingTextIsNumeric
-            }
-        }
-        return result
-        */
-        
+        // make sure we can only type numbers
         
         let characterSetNotAllowed = CharacterSet.decimalDigits
         
@@ -107,24 +86,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
         } else {
             return true
         }
-        
-        
-        /*let replacementTextHasDecimalSeparator = string.range(of: ".")
-        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-        
-        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
-            return false
-        }
-        else {
-            if CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string)) || (string.range(of: ".") != nil) {
-                // If incoming character is a decimalDigit or a period, return true
-                return true
-            }
-            else {
-                // If a letter is detected, returns false
-                return false
-            }
-        } */
         
     }
     
@@ -176,7 +137,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
             dnis.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: .fade)
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
         saveDnis()
     }
